@@ -69,7 +69,7 @@ struct `Layout.Grid Tests` {
         let spacing: TestLayout.Spacing = 10.0
         let grid: TestLayout.Grid<[[Int]]> = .uniform(spacing: spacing, content: [[1, 2]])
 
-        let mapped: TestLayout.Grid<[[String]]> = try grid.map.content { rows in
+        let mapped: TestLayout.Grid<[[String]]> = grid.map.content { rows in
             rows.map { row in row.map { String($0) } }
         }
         #expect(mapped.content == [["1", "2"]])

@@ -70,7 +70,7 @@ struct `Layout.Stack Tests` {
             content: [1, 2, 3]
         )
 
-        let mapped: TestLayout.Stack<[String]> = try stack.map.content { $0.map { String($0) } }
+        let mapped: TestLayout.Stack<[String]> = stack.map.content { $0.map { String($0) } }
         #expect(mapped.content == ["1", "2", "3"])
         #expect(mapped.spacing == spacing)
     }

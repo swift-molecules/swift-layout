@@ -132,7 +132,7 @@ struct LazyGridTests {
             content: [1, 2, 3]
         )
 
-        let mapped: TestGrid<[String]>.Lazy = try grid.map.content { items in
+        let mapped: TestGrid<[String]>.Lazy = grid.map.content { items in
             items.map { String($0) }
         }
 

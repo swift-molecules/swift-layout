@@ -72,7 +72,7 @@ struct `Layout.Flow Tests` {
         let spacing: TestLayout.Spacing = 10.0
         let flow: TestLayout.Flow<[Int]> = .uniform(spacing: spacing, content: [1, 2, 3])
 
-        let mapped: TestLayout.Flow<[String]> = try flow.map.content { $0.map { String($0) } }
+        let mapped: TestLayout.Flow<[String]> = flow.map.content { $0.map { String($0) } }
         #expect(mapped.content == ["1", "2", "3"])
         #expect(mapped.spacing.item == spacing.width)
         #expect(mapped.spacing.line == spacing.height)
