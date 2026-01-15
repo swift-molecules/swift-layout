@@ -18,11 +18,11 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-primitives/swift-dimension-primitives.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-primitives/swift-positioning-primitives.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-primitives/swift-geometry-primitives.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-primitives/swift-region-primitives.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-primitives/swift-test-primitives.git", from: "0.0.1"),
+        .package(path: "../swift-dimension-primitives"),
+        .package(path: "../swift-positioning-primitives"),
+        .package(path: "../swift-geometry-primitives"),
+        .package(path: "../swift-region-primitives"),
+        .package(path: "../swift-test-primitives"),
     ],
     targets: [
         .target(
@@ -50,6 +50,7 @@ for target in package.targets where ![.system, .binary, .plugin].contains(target
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
         .enableUpcomingFeature("MemberImportVisibility"),
+        .strictMemorySafety(),
     ]
     target.swiftSettings = (target.swiftSettings ?? []) + settings
 }
