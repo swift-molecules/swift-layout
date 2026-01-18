@@ -9,20 +9,19 @@ let package = Package(
         .iOS(.v26),
         .tvOS(.v26),
         .watchOS(.v26),
-        .visionOS(.v26),
+        .visionOS(.v26)
     ],
     products: [
         .library(
             name: "Layout Primitives",
             targets: ["Layout Primitives"]
-        ),
+        )
     ],
     dependencies: [
         .package(path: "../swift-dimension-primitives"),
         .package(path: "../swift-positioning-primitives"),
         .package(path: "../swift-geometry-primitives"),
-        .package(path: "../swift-region-primitives"),
-        .package(path: "../swift-test-primitives"),
+        .package(path: "../swift-region-primitives")
     ],
     targets: [
         .target(
@@ -31,16 +30,9 @@ let package = Package(
                 .product(name: "Dimension Primitives", package: "swift-dimension-primitives"),
                 .product(name: "Positioning Primitives", package: "swift-positioning-primitives"),
                 .product(name: "Geometry Primitives", package: "swift-geometry-primitives"),
-                .product(name: "Region Primitives", package: "swift-region-primitives"),
+                .product(name: "Region Primitives", package: "swift-region-primitives")
             ]
-        ),
-        .testTarget(
-            name: "Layout Primitives Tests",
-            dependencies: [
-                "Layout Primitives",
-                .product(name: "Test Primitives", package: "swift-test-primitives"),
-            ]
-        ),
+        )
     ],
     swiftLanguageModes: [.v6]
 )
@@ -51,7 +43,7 @@ for target in package.targets where ![.system, .binary, .plugin, .macro].contain
         .enableUpcomingFeature("InternalImportsByDefault"),
         .enableUpcomingFeature("MemberImportVisibility"),
         .enableExperimentalFeature("Lifetimes"),
-        .strictMemorySafety(),
+        .strictMemorySafety()
     ]
     target.swiftSettings = (target.swiftSettings ?? []) + settings
 }
