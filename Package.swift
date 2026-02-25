@@ -32,7 +32,13 @@ let package = Package(
                 .product(name: "Geometry Primitives", package: "swift-geometry-primitives"),
                 .product(name: "Region Primitives", package: "swift-region-primitives")
             ]
-        )
+        ),
+        .testTarget(
+            name: "Layout Primitives Tests",
+            dependencies: [
+                "Layout Primitives",
+            ]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
@@ -43,6 +49,7 @@ for target in package.targets where ![.system, .binary, .plugin, .macro].contain
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
         .enableUpcomingFeature("MemberImportVisibility"),
+        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
         .enableExperimentalFeature("Lifetimes"),
         .enableExperimentalFeature("SuppressedAssociatedTypes"),
         .enableExperimentalFeature("SuppressedAssociatedTypesWithDefaults"),
