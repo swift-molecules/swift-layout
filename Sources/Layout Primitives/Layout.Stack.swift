@@ -76,7 +76,7 @@ extension Layout.Stack: Hashable where Scalar: Hashable, Content: Hashable {}
     extension Layout.Stack: Codable where Scalar: Codable, Content: Codable {}
 #endif
 
-// MARK: - Convenience Initializers
+// MARK: - Named Convenience Initializers
 
 extension Layout.Stack {
     /// Creates a vertical stack (items flow top to bottom).
