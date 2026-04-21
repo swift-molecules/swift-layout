@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../swift-dimension-primitives"),
-        .package(path: "../swift-positioning-primitives"),
+        .package(path: "../swift-position-primitives"),
         .package(path: "../swift-geometry-primitives"),
         .package(path: "../swift-region-primitives")
     ],
@@ -28,7 +28,7 @@ let package = Package(
             name: "Layout Primitives",
             dependencies: [
                 .product(name: "Dimension Primitives", package: "swift-dimension-primitives"),
-                .product(name: "Positioning Primitives", package: "swift-positioning-primitives"),
+                .product(name: "Position Primitives", package: "swift-position-primitives"),
                 .product(name: "Geometry Primitives", package: "swift-geometry-primitives"),
                 .product(name: "Region Primitives", package: "swift-region-primitives")
             ]
