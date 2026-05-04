@@ -5,6 +5,7 @@ import Geometry_Primitives
 import Testing
 
 @testable import Layout_Primitives
+import Layout_Primitives_Test_Support
 
 @Suite("Layout.Grid.Lazy")
 struct LazyGridTests {
