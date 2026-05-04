@@ -15,7 +15,11 @@ let package = Package(
         .library(
             name: "Layout Primitives",
             targets: ["Layout Primitives"]
-        )
+        ),
+        .library(
+            name: "Layout Primitives Test Support",
+            targets: ["Layout Primitives Test Support"]
+        ),
     ],
     dependencies: [
         .package(path: "../swift-dimension-primitives"),
@@ -33,10 +37,19 @@ let package = Package(
                 .product(name: "Region Primitives", package: "swift-region-primitives")
             ]
         ),
+        .target(
+            name: "Layout Primitives Test Support",
+            dependencies: [
+                "Layout Primitives",
+                .product(name: "Dimension Primitives Test Support", package: "swift-dimension-primitives"),
+            ],
+            path: "Tests/Support"
+        ),
         .testTarget(
             name: "Layout Primitives Tests",
             dependencies: [
                 "Layout Primitives",
+                "Layout Primitives Test Support",
             ]
         ),
     ],
