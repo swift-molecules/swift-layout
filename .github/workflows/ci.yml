@@ -27,11 +27,6 @@ jobs:
   docs:
     uses: swift-institute/.github/.github/workflows/swift-docs.yml@main
     with:
-      umbrella-module: Layout_Primitives
-      umbrella-display-name: "Layout Primitives"
-      umbrella-bundle-id: "swift-layout-primitives.Layout-Primitives"
-      umbrella-docc-path: "Sources/Layout Primitives/Layout Primitives.docc"
-      exclude-modules: ""
       enable-private-repos: true
     secrets:
       PRIVATE_REPO_TOKEN: ${{ secrets.PRIVATE_REPO_TOKEN }}
