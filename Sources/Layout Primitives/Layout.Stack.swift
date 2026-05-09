@@ -125,7 +125,7 @@ extension Layout.Stack {
 
         /// Transforms the content using the given closure.
         @inlinable
-        public func content<Result, E: Error>(
+        public func content<Result, E: Swift.Error>(
             _ transform: (Content) throws(E) -> Result
         ) throws(E) -> Layout<Scalar, Space>.Stack<Result> {
             Layout<Scalar, Space>.Stack<Result>(
