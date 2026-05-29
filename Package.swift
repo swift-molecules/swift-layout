@@ -22,9 +22,9 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../swift-dimension-primitives"),
-        .package(path: "../swift-geometry-primitives"),
-        .package(path: "../swift-region-primitives")
+        .package(url: "https://github.com/swift-primitives/swift-dimension-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-geometry-primitives.git", branch: "main"),
+        .package(url: "https://github.com/swift-primitives/swift-region-primitives.git", branch: "main")
     ],
     targets: [
         .target(
