@@ -25,7 +25,7 @@ let package = Package(
         .package(url: "https://github.com/swift-primitives/swift-axis-primitives.git", branch: "main"),
         .package(url: "https://github.com/swift-primitives/swift-dimension-primitives.git", branch: "main"),
         .package(url: "https://github.com/swift-primitives/swift-geometry-primitives.git", branch: "main"),
-        .package(url: "https://github.com/swift-primitives/swift-region-primitives.git", branch: "main")
+        .package(url: "https://github.com/swift-primitives/swift-boundary-primitives.git", branch: "main")
     ],
     targets: [
         .target(
@@ -34,7 +34,7 @@ let package = Package(
                 .product(name: "Axis Primitives", package: "swift-axis-primitives"),
                 .product(name: "Dimension Primitives", package: "swift-dimension-primitives"),
                 .product(name: "Geometry Primitives", package: "swift-geometry-primitives"),
-                .product(name: "Region Primitives", package: "swift-region-primitives")
+                .product(name: "Boundary Primitives", package: "swift-boundary-primitives")
             ]
         ),
         .target(

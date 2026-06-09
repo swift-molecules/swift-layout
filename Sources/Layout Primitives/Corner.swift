@@ -2,7 +2,7 @@
 // Layout-aware rectangle corners.
 
 public import Dimension_Primitives
-public import Region_Primitives
+public import Boundary_Primitives
 
 /// A layout-relative corner of a rectangle that adapts to text direction.
 ///
@@ -17,8 +17,8 @@ public import Region_Primitives
 /// let badge = Corner.topTrailing  // Top-right in LTR, top-left in RTL
 ///
 /// // Convert to absolute coordinates
-/// let absolute = Region.Corner(badge, direction: .leftToRight)  // .topRight
-/// let rtl = Region.Corner(badge, direction: .rightToLeft)       // .topLeft
+/// let absolute = Boundary.Corner(badge, direction: .leftToRight)  // .topRight
+/// let rtl = Boundary.Corner(badge, direction: .rightToLeft)       // .topLeft
 /// ```
 public struct Corner: Sendable, Hashable, Codable {
     /// Horizontal side (leading or trailing)
@@ -239,15 +239,17 @@ extension Corner {
     }
 }
 
-// MARK: - Region.Corner from Layout.Corner
+// MARK: - Boundary.Corner from Layout.Corner
 
-extension Region.Corner {
-    /// Creates an absolute corner from a layout-relative corner.
+extension Boundary.Corner {
+    /// Creates an absolute box corner from a layout-relative corner.
     @inlinable
     public init(_ corner: Corner, direction: Direction) {
-        self.init(
-            horizontal: Horizontal(corner.horizontal, direction: direction),
-            vertical: Vertical(corner.vertical)
-        )
+        switch (Horizontal(corner.horizontal, direction: direction), Vertical(corner.vertical)) {
+        case (.rightward, .upward): self = .topRight
+        case (.leftward, .upward): self = .topLeft
+        case (.rightward, .downward): self = .bottomRight
+        case (.leftward, .downward): self = .bottomLeft
+        }
     }
 }
