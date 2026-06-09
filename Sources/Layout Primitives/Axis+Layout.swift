@@ -2,6 +2,7 @@
 // Spatial axis aliases for 2D Cartesian layout.
 
 public import Dimension_Primitives
+public import Axis_Primitives
 
 extension Axis where N == 2 {
     /// The horizontal axis (index 0, X).

@@ -4,6 +4,7 @@ import Testing
 
 @testable import Geometry_Primitives
 @testable import Layout_Primitives
+import Axis_Primitives
 
 // MARK: - Stack Tests
 
