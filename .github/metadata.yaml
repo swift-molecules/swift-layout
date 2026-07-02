@@ -1,6 +1,6 @@
 # .github/metadata.yaml
 # Triaged by AI-assisted bulk pass (2026-04-29).
-description: "Layout types for Swift."
+description: "Compositional layout containers (Stack, Grid, Flow) as functors mapping content to positioned geometry, parameterized by scalar type and coordinate space for Swift."
 topics:
   - primitives
   - layout
