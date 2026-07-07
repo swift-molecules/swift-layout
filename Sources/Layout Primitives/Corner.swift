@@ -1,8 +1,8 @@
 // Corner.swift
 // Layout-aware rectangle corners.
 
-public import Dimension_Primitives
 public import Boundary_Primitives
+public import Dimension_Primitives
 
 /// A layout-relative corner of a rectangle that adapts to text direction.
 ///
@@ -21,10 +21,10 @@ public import Boundary_Primitives
 /// let rtl = Boundary.Corner(badge, direction: .rightToLeft)       // .topLeft
 /// ```
 public struct Corner: Sendable, Hashable, Codable {
-    /// Horizontal side (leading or trailing)
+    /// Horizontal side (leading or trailing).
     public var horizontal: Horizontal.Alignment.Side
 
-    /// Vertical side (top or bottom)
+    /// Vertical side (top or bottom).
     public var vertical: Vertical.Alignment.Side
 
     /// Creates a corner from horizontal and vertical sides.
@@ -49,7 +49,7 @@ extension Horizontal.Alignment {
 
         /// Returns the opposite side.
         @inlinable
-        public static func opposite(_ side: Side) -> Side {
+        public static func opposite(_ side: Self) -> Self {
             switch side {
             case .leading: return .trailing
             case .trailing: return .leading
@@ -58,7 +58,7 @@ extension Horizontal.Alignment {
 
         /// Returns the opposite side.
         @inlinable
-        public var opposite: Side {
+        public var opposite: Self {
             Self.opposite(self)
         }
     }
@@ -73,6 +73,7 @@ extension Horizontal {
         switch (side, direction) {
         case (.leading, .leftToRight), (.trailing, .rightToLeft):
             self = .leftward
+
         case (.trailing, .leftToRight), (.leading, .rightToLeft):
             self = .rightward
         }
@@ -93,7 +94,7 @@ extension Vertical.Alignment {
 
         /// Returns the opposite side.
         @inlinable
-        public static func opposite(_ side: Side) -> Side {
+        public static func opposite(_ side: Self) -> Self {
             switch side {
             case .top: return .bottom
             case .bottom: return .top
@@ -102,7 +103,7 @@ extension Vertical.Alignment {
 
         /// Returns the opposite side.
         @inlinable
-        public var opposite: Side {
+        public var opposite: Self {
             Self.opposite(self)
         }
     }
@@ -124,22 +125,23 @@ extension Vertical {
 // MARK: - Named Corners
 
 extension Corner {
-    /// Top-leading corner (top-left in LTR, top-right in RTL)
+    /// Top-leading corner (top-left in LTR, top-right in RTL).
     public static let topLeading = Corner(horizontal: .leading, vertical: .top)
 
-    /// Top-trailing corner (top-right in LTR, top-left in RTL)
+    /// Top-trailing corner (top-right in LTR, top-left in RTL).
     public static let topTrailing = Corner(horizontal: .trailing, vertical: .top)
 
-    /// Bottom-leading corner (bottom-left in LTR, bottom-right in RTL)
+    /// Bottom-leading corner (bottom-left in LTR, bottom-right in RTL).
     public static let bottomLeading = Corner(horizontal: .leading, vertical: .bottom)
 
-    /// Bottom-trailing corner (bottom-right in LTR, bottom-left in RTL)
+    /// Bottom-trailing corner (bottom-right in LTR, bottom-left in RTL).
     public static let bottomTrailing = Corner(horizontal: .trailing, vertical: .bottom)
 }
 
 // MARK: - CaseIterable
 
 extension Corner: CaseIterable {
+    /// All four named corners: top-leading, top-trailing, bottom-leading, bottom-trailing.
     public static let allCases: [Corner] = [
         .topLeading, .topTrailing, .bottomLeading, .bottomTrailing,
     ]
@@ -154,7 +156,7 @@ extension Corner {
         Corner(horizontal: .opposite(corner.horizontal), vertical: .opposite(corner.vertical))
     }
 
-    /// Diagonally opposite corner
+    /// Diagonally opposite corner.
     @inlinable
     public var opposite: Corner {
         Self.opposite(self)
@@ -170,43 +172,43 @@ extension Corner {
 // MARK: - Properties
 
 extension Corner {
-    /// Whether this corner is on the top edge
+    /// Whether this corner is on the top edge.
     @inlinable
     public static func isTop(_ corner: Corner) -> Bool {
         corner.vertical == .top
     }
 
-    /// Whether this corner is on the top edge
+    /// Whether this corner is on the top edge.
     @inlinable
     public var isTop: Bool { Self.isTop(self) }
 
-    /// Whether this corner is on the bottom edge
+    /// Whether this corner is on the bottom edge.
     @inlinable
     public static func isBottom(_ corner: Corner) -> Bool {
         corner.vertical == .bottom
     }
 
-    /// Whether this corner is on the bottom edge
+    /// Whether this corner is on the bottom edge.
     @inlinable
     public var isBottom: Bool { Self.isBottom(self) }
 
-    /// Whether this corner is on the leading edge
+    /// Whether this corner is on the leading edge.
     @inlinable
     public static func isLeading(_ corner: Corner) -> Bool {
         corner.horizontal == .leading
     }
 
-    /// Whether this corner is on the leading edge
+    /// Whether this corner is on the leading edge.
     @inlinable
     public var isLeading: Bool { Self.isLeading(self) }
 
-    /// Whether this corner is on the trailing edge
+    /// Whether this corner is on the trailing edge.
     @inlinable
     public static func isTrailing(_ corner: Corner) -> Bool {
         corner.horizontal == .trailing
     }
 
-    /// Whether this corner is on the trailing edge
+    /// Whether this corner is on the trailing edge.
     @inlinable
     public var isTrailing: Bool { Self.isTrailing(self) }
 }
@@ -220,7 +222,7 @@ extension Corner {
         Corner(horizontal: .opposite(corner.horizontal), vertical: corner.vertical)
     }
 
-    /// Corner horizontally adjacent along the same edge
+    /// Corner horizontally adjacent along the same edge.
     @inlinable
     public var horizontalAdjacent: Corner {
         Self.horizontalAdjacent(self)
@@ -232,7 +234,7 @@ extension Corner {
         Corner(horizontal: corner.horizontal, vertical: .opposite(corner.vertical))
     }
 
-    /// Corner vertically adjacent along the same edge
+    /// Corner vertically adjacent along the same edge.
     @inlinable
     public var verticalAdjacent: Corner {
         Self.verticalAdjacent(self)

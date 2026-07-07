@@ -2,10 +2,10 @@
 // Tests for Layout.Grid.Lazy
 
 import Geometry_Primitives
+import Layout_Primitives_Test_Support
 import Testing
 
 @testable import Layout_Primitives
-import Layout_Primitives_Test_Support
 
 @Suite("Layout.Grid.Lazy")
 struct LazyGridTests {

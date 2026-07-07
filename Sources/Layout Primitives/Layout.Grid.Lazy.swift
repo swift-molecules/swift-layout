@@ -39,13 +39,13 @@ extension Layout.Grid {
     /// )
     /// ```
     public struct Lazy {
-        /// Column sizing configuration
+        /// Column sizing configuration.
         public var columns: Columns
 
-        /// Spacing between rows and columns
+        /// Spacing between rows and columns.
         public var spacing: Gaps
 
-        /// Content to arrange in the grid
+        /// Content to arrange in the grid.
         public var content: Content
 
         /// Creates a lazy grid with the specified configuration.
@@ -204,10 +204,13 @@ extension Layout.Grid.Lazy {
             switch columns {
             case .count(let n):
                 return .count(n)
+
             case .fractions(let f):
                 return .fractions(f)
+
             case .autoFill(let minWidth):
                 return .autoFill(minWidth: minWidth)
+
             case .autoFit(let minWidth):
                 return .autoFit(minWidth: minWidth)
             }

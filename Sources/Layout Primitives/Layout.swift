@@ -62,8 +62,9 @@ extension Layout {
     public typealias Height = Geometry<Scalar, Space>.Height
 
     /// Non-directional spacing magnitude.
+    ///
     /// Projects to Width or Height at usage based on axis.
-    /// See ``Geometry/Magnitude``
+    /// See ``Geometry/Magnitude``.
     public typealias Spacing = Geometry<Scalar, Space>.Magnitude
 
     /// 2D position in space.

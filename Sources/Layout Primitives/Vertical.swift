@@ -59,11 +59,11 @@ extension Vertical {
 // MARK: - Alignment Convenience
 
 extension Vertical.Alignment {
-    /// Aligns to the first text baseline (top baseline for multi-line text)
+    /// Aligns to the first text baseline (top baseline for multi-line text).
     @inlinable
     public static var firstBaseline: Self { .baseline(.first) }
 
-    /// Aligns to the last text baseline (bottom baseline for multi-line text)
+    /// Aligns to the last text baseline (bottom baseline for multi-line text).
     @inlinable
     public static var lastBaseline: Self { .baseline(.last) }
 }
@@ -71,6 +71,7 @@ extension Vertical.Alignment {
 // MARK: - Alignment CaseIterable
 
 extension Vertical.Alignment: CaseIterable {
+    /// All non-baseline cases plus both named baseline cases (first, last).
     public static var allCases: [Vertical.Alignment] {
         [.top, .center, .bottom, .baseline(.first), .baseline(.last)]
     }

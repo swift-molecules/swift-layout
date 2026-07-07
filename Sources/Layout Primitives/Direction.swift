@@ -28,10 +28,10 @@ public enum Direction: Sendable, Hashable, Codable, CaseIterable {
 // MARK: - Aliases
 
 extension Direction {
-    /// Shorthand for left-to-right layout
+    /// Shorthand for left-to-right layout.
     public static var ltr: Self { .leftToRight }
 
-    /// Shorthand for right-to-left layout
+    /// Shorthand for right-to-left layout.
     public static var rtl: Self { .rightToLeft }
 }
 

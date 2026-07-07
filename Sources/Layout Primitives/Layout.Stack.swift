@@ -1,8 +1,8 @@
 // Layout.Stack.swift
 // A sequential arrangement of content along an axis.
 
-public import Dimension_Primitives
 public import Axis_Primitives
+public import Dimension_Primitives
 
 extension Layout {
     /// A linear arrangement of content along a horizontal or vertical axis.
@@ -31,17 +31,18 @@ extension Layout {
     /// )
     /// ```
     public struct Stack<Content> {
-        /// Axis along which content flows (`.primary` for horizontal, `.secondary` for vertical)
+        /// Axis along which content flows (`.primary` for horizontal, `.secondary` for vertical).
         public var axis: Axis<2>
 
         /// Spacing between adjacent items (non-directional magnitude).
+        ///
         /// Projects to Width or Height based on axis at render time.
         public var spacing: Spacing
 
-        /// Cross-axis alignment (vertical for horizontal stack, horizontal for vertical stack)
+        /// Cross-axis alignment (vertical for horizontal stack, horizontal for vertical stack).
         public var alignment: Cross.Alignment
 
-        /// Content to arrange
+        /// Content to arrange.
         public var content: Content
 
         /// Creates a stack with the specified configuration.

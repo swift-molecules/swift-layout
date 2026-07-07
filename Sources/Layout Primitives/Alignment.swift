@@ -20,10 +20,10 @@ public import Dimension_Primitives
 /// let centered = Alignment.center
 /// ```
 public struct Alignment: Sendable, Hashable, Codable {
-    /// Horizontal alignment component
+    /// Horizontal alignment component.
     public var horizontal: Horizontal.Alignment
 
-    /// Vertical alignment component
+    /// Vertical alignment component.
     public var vertical: Vertical.Alignment
 
     /// Creates an alignment from horizontal and vertical components.
@@ -37,30 +37,30 @@ public struct Alignment: Sendable, Hashable, Codable {
 // MARK: - Presets
 
 extension Alignment {
-    /// Top-leading corner (top-left in LTR, top-right in RTL)
+    /// Top-leading corner (top-left in LTR, top-right in RTL).
     public static let topLeading = Self(horizontal: .leading, vertical: .top)
 
-    /// Top center edge
+    /// Top center edge.
     public static let top = Self(horizontal: .center, vertical: .top)
 
-    /// Top-trailing corner (top-right in LTR, top-left in RTL)
+    /// Top-trailing corner (top-right in LTR, top-left in RTL).
     public static let topTrailing = Self(horizontal: .trailing, vertical: .top)
 
-    /// Center-leading edge (left edge in LTR, right edge in RTL)
+    /// Center-leading edge (left edge in LTR, right edge in RTL).
     public static let leading = Self(horizontal: .leading, vertical: .center)
 
-    /// Exact center point
+    /// Exact center point.
     public static let center = Self(horizontal: .center, vertical: .center)
 
-    /// Center-trailing edge (right edge in LTR, left edge in RTL)
+    /// Center-trailing edge (right edge in LTR, left edge in RTL).
     public static let trailing = Self(horizontal: .trailing, vertical: .center)
 
-    /// Bottom-leading corner (bottom-left in LTR, bottom-right in RTL)
+    /// Bottom-leading corner (bottom-left in LTR, bottom-right in RTL).
     public static let bottomLeading = Self(horizontal: .leading, vertical: .bottom)
 
-    /// Bottom center edge
+    /// Bottom center edge.
     public static let bottom = Self(horizontal: .center, vertical: .bottom)
 
-    /// Bottom-trailing corner (bottom-right in LTR, bottom-left in RTL)
+    /// Bottom-trailing corner (bottom-right in LTR, bottom-left in RTL).
     public static let bottomTrailing = Self(horizontal: .trailing, vertical: .bottom)
 }

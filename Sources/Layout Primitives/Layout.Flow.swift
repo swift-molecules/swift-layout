@@ -29,16 +29,16 @@ extension Layout {
     /// // [Memory] [Safety]
     /// ```
     public struct Flow<Content> {
-        /// Spacing between items and between lines
+        /// Spacing between items and between lines.
         public var spacing: Gaps
 
-        /// Horizontal alignment of items within each line
+        /// Horizontal alignment of items within each line.
         public var alignment: Horizontal.Alignment
 
-        /// Vertical alignment of lines within the container
+        /// Vertical alignment of lines within the container.
         public var line: Line
 
-        /// Content to arrange
+        /// Content to arrange.
         public var content: Content
 
         /// Creates a flow layout with the specified configuration.
@@ -65,10 +65,10 @@ extension Layout.Flow {
     /// Uses dimensionally-typed spacing: `Width` for horizontal item gaps,
     /// `Height` for vertical line gaps.
     public struct Gaps {
-        /// Spacing between items on the same line (horizontal gap)
+        /// Spacing between items on the same line (horizontal gap).
         public var item: Layout.Width
 
-        /// Spacing between lines (vertical gap)
+        /// Spacing between lines (vertical gap).
         public var line: Layout.Height
 
         /// Creates spacing with the specified item and line values.
@@ -100,7 +100,7 @@ extension Layout.Flow.Gaps where Scalar: AdditiveArithmetic {
 extension Layout.Flow {
     /// Line configuration controlling vertical alignment in a flow layout.
     public struct Line: Sendable, Hashable, Codable {
-        /// Vertical alignment of wrapped lines within the container
+        /// Vertical alignment of wrapped lines within the container.
         public var alignment: Vertical.Alignment
 
         /// Creates line configuration with the specified alignment.
@@ -112,15 +112,15 @@ extension Layout.Flow {
 }
 
 extension Layout.Flow.Line {
-    /// Aligns lines to the top of the container
+    /// Aligns lines to the top of the container.
     @inlinable
     public static var top: Self { Self(alignment: .top) }
 
-    /// Centers lines vertically within the container
+    /// Centers lines vertically within the container.
     @inlinable
     public static var center: Self { Self(alignment: .center) }
 
-    /// Aligns lines to the bottom of the container
+    /// Aligns lines to the bottom of the container.
     @inlinable
     public static var bottom: Self { Self(alignment: .bottom) }
 }

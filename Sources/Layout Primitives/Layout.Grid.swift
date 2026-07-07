@@ -30,13 +30,13 @@ extension Layout {
     /// )
     /// ```
     public struct Grid<Content> {
-        /// Spacing between rows and columns
+        /// Spacing between rows and columns.
         public var spacing: Gaps
 
-        /// Alignment within each grid cell
+        /// Alignment within each grid cell.
         public var alignment: Alignment
 
-        /// Grid content (typically a 2D array or similar structure)
+        /// Grid content (typically a 2D array or similar structure).
         public var content: Content
 
         /// Creates a grid with the specified configuration.
@@ -61,10 +61,10 @@ extension Layout.Grid {
     /// Uses dimensionally-typed spacing: `Height` for vertical row gaps,
     /// `Width` for horizontal column gaps.
     public struct Gaps {
-        /// Spacing between rows (vertical gap)
+        /// Spacing between rows (vertical gap).
         public var row: Layout.Height
 
-        /// Spacing between columns (horizontal gap)
+        /// Spacing between columns (horizontal gap).
         public var column: Layout.Width
 
         /// Creates spacing with the specified row and column values.
