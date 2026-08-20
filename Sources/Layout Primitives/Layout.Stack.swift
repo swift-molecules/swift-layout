@@ -2,7 +2,7 @@
 // A sequential arrangement of content along an axis.
 
 public import Axis_Primitives
-public import Dimension_Primitives
+import Dimension_Primitives
 
 extension Layout {
     /// A linear arrangement of content along a horizontal or vertical axis.
