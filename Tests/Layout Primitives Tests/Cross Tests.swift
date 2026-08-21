@@ -1,5 +1,3 @@
-// Cross Tests.swift
-
 import Testing
 
 @testable import Layout_Primitives
@@ -8,7 +6,7 @@ import Testing
 struct `Cross.Alignment Tests` {
     @Test(arguments: Cross.Alignment.allCases)
     func cases(alignment: Cross.Alignment) {
-        // Verify each case is distinct
+
         #expect(Cross.Alignment.allCases.contains(alignment))
     }
 

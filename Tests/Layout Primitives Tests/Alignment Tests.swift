@@ -1,5 +1,3 @@
-// Alignment Tests.swift
-
 import Testing
 
 @testable import Layout_Primitives

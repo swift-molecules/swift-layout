@@ -1,5 +1,3 @@
-// Corner Tests.swift
-
 import Testing
 
 @testable import Dimension_Primitives
@@ -9,7 +7,7 @@ import Testing
 struct `Corner Tests` {
     @Test(arguments: Corner.allCases)
     func presets(corner: Corner) {
-        // Test that each corner has the correct components
+
         if corner == .topLeading {
             #expect(corner.horizontal == .leading)
             #expect(corner.vertical == .top)

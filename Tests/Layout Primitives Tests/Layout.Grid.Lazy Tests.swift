@@ -1,6 +1,3 @@
-// Layout.Grid.Lazy Tests.swift
-// Tests for Layout.Grid.Lazy
-
 import Geometry_Primitives
 import Layout_Primitives_Test_Support
 import Testing
@@ -11,8 +8,6 @@ import Testing
 struct `Layout.Grid.Lazy Tests` {
     typealias TestLayout = Layout<Double, Void>
     typealias TestGrid<C> = TestLayout.Grid<C>
-
-    // MARK: - Initialization
 
     @Test
     func `Lazy grid initializes with count columns`() {
@@ -77,8 +72,6 @@ struct `Layout.Grid.Lazy Tests` {
         }
     }
 
-    // MARK: - Convenience Initializers
-
     @Test
     func `Lazy grid with uniform spacing`() {
         let grid = TestGrid<[String]>.Lazy(
@@ -123,8 +116,6 @@ struct `Layout.Grid.Lazy Tests` {
         #expect(grid.spacing.column == 12)
     }
 
-    // MARK: - Functorial Map
-
     @Test
     func `Lazy grid content map`() throws {
         let grid = TestGrid<[Int]>.Lazy(
@@ -143,8 +134,6 @@ struct `Layout.Grid.Lazy Tests` {
         }
         #expect(mapped.spacing.row == 10)
     }
-
-    // MARK: - Protocol Conformances
 
     @Test
     func `Lazy grid is Equatable`() {

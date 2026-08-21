@@ -1,12 +1,8 @@
-// Layout.Stack Tests.swift
-
 import Axis_Primitives
 import Testing
 
 @testable import Geometry_Primitives
 @testable import Layout_Primitives
-
-// MARK: - Stack Tests
 
 @Suite
 struct `Layout.Stack Tests` {

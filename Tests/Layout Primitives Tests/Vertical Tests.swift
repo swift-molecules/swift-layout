@@ -1,5 +1,3 @@
-// Vertical Tests.swift
-
 import Testing
 
 @testable import Dimension_Primitives
@@ -9,7 +7,7 @@ import Testing
 struct `Vertical.Alignment Tests` {
     @Test(arguments: Vertical.Alignment.allCases)
     func cases(alignment: Vertical.Alignment) {
-        // Verify each case is distinct
+
         #expect(Vertical.Alignment.allCases.contains(alignment))
     }
 
@@ -34,7 +32,7 @@ struct `Vertical.Alignment Tests` {
 struct `Vertical.Baseline Tests` {
     @Test(arguments: Vertical.Baseline.allCases)
     func cases(baseline: Vertical.Baseline) {
-        // Verify each case is distinct
+
         #expect(Vertical.Baseline.allCases.contains(baseline))
     }
 

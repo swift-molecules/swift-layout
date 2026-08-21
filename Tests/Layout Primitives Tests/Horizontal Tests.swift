@@ -1,5 +1,3 @@
-// Horizontal Tests.swift
-
 import Testing
 
 @testable import Dimension_Primitives
@@ -9,7 +7,7 @@ import Testing
 struct `Horizontal.Alignment Tests` {
     @Test(arguments: Horizontal.Alignment.allCases)
     func cases(alignment: Horizontal.Alignment) {
-        // Verify each case is distinct
+
         #expect(Horizontal.Alignment.allCases.contains(alignment))
     }
 
