@@ -1,5 +1,5 @@
-public import Boundary_Primitives
-public import Dimension_Primitives
+public import Boundary
+public import Dimension
 
 public struct Corner: Sendable, Hashable, Codable {
 

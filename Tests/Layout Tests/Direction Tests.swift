@@ -1,6 +1,6 @@
 import Testing
 
-@testable import Layout_Primitives
+@testable import Layout
 
 @Suite
 struct `Direction Tests` {

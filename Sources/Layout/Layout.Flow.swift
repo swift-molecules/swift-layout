@@ -1,5 +1,5 @@
-public import Dimension_Primitives
-public import Geometry_Primitives
+public import Dimension
+public import Geometry
 
 extension Layout {
 

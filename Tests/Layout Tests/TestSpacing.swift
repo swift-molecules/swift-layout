@@ -1,5 +1,5 @@
-import Geometry_Primitives
-import Layout_Primitives
+import Geometry
+import Layout
 
 enum TestSpace {}
 

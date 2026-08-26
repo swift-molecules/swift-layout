@@ -1,4 +1,4 @@
-public import Geometry_Primitives
+public import Geometry
 
 public enum Layout<Scalar: ~Copyable, Space>: ~Copyable {}
 

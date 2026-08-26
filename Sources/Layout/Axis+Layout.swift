@@ -1,5 +1,5 @@
-public import Axis_Primitives
-import Dimension_Primitives
+public import Axis
+import Dimension
 
 extension Axis where N == 2 {
 

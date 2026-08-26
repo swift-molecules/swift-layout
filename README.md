@@ -1,4 +1,4 @@
-# Layout Primitives
+# Layout
 
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
 
@@ -10,7 +10,7 @@ Add the dependency to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-primitives/swift-layout-primitives.git", branch: "main")
+    .package(url: "https://github.com/swift-molecules/swift-layout.git", branch: "main")
 ]
 ```
 
@@ -20,7 +20,7 @@ Add the product to your target:
 .target(
     name: "App",
     dependencies: [
-        .product(name: "Layout Primitives", package: "swift-layout-primitives")
+        .product(name: "Layout", package: "swift-layout")
     ]
 )
 ```

@@ -1,7 +1,7 @@
 import Testing
 
-@testable import Dimension_Primitives
-@testable import Layout_Primitives
+@testable import Dimension
+@testable import Layout
 
 @Suite
 struct `Corner Tests` {

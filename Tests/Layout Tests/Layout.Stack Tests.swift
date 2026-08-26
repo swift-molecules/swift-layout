@@ -1,8 +1,8 @@
-import Axis_Primitives
+import Axis
 import Testing
 
-@testable import Geometry_Primitives
-@testable import Layout_Primitives
+@testable import Geometry
+@testable import Layout
 
 @Suite
 struct `Layout.Stack Tests` {

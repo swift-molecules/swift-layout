@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-layout-primitives",
+    name: "swift-layout",
     platforms: [
         .macOS(.v27),
         .iOS(.v27),
@@ -13,58 +13,58 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Layout Primitives",
-            targets: ["Layout Primitives"]
+            name: "Layout",
+            targets: ["Layout"]
         ),
         .library(
-            name: "Layout Primitives Test Support",
-            targets: ["Layout Primitives Test Support"]
+            name: "Layout Test Support",
+            targets: ["Layout Test Support"]
         ),
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-primitives/swift-axis-primitives.git",
+            url: "https://github.com/swift-molecules/swift-axis.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-dimension-primitives.git",
+            url: "https://github.com/swift-molecules/swift-dimension.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-geometry-primitives.git",
+            url: "https://github.com/swift-molecules/swift-geometry.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-boundary-primitives.git",
+            url: "https://github.com/swift-molecules/swift-boundary.git",
             branch: "main"
         ),
     ],
     targets: [
         .target(
-            name: "Layout Primitives",
+            name: "Layout",
             dependencies: [
-                .product(name: "Axis Primitives", package: "swift-axis-primitives"),
-                .product(name: "Dimension Primitives", package: "swift-dimension-primitives"),
-                .product(name: "Geometry Primitives", package: "swift-geometry-primitives"),
-                .product(name: "Boundary Primitives", package: "swift-boundary-primitives"),
+                .product(name: "Axis", package: "swift-axis"),
+                .product(name: "Dimension", package: "swift-dimension"),
+                .product(name: "Geometry", package: "swift-geometry"),
+                .product(name: "Boundary", package: "swift-boundary"),
             ]
         ),
         .target(
-            name: "Layout Primitives Test Support",
+            name: "Layout Test Support",
             dependencies: [
-                "Layout Primitives",
+                "Layout",
                 .product(
-                    name: "Dimension Primitives Test Support",
-                    package: "swift-dimension-primitives"
+                    name: "Dimension Test Support",
+                    package: "swift-dimension"
                 ),
             ],
             path: "Tests/Support"
         ),
         .testTarget(
-            name: "Layout Primitives Tests",
+            name: "Layout Tests",
             dependencies: [
-                "Layout Primitives",
-                "Layout Primitives Test Support",
+                "Layout",
+                "Layout Test Support",
             ]
         ),
     ],

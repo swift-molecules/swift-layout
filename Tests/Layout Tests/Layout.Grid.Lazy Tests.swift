@@ -1,8 +1,8 @@
-import Geometry_Primitives
-import Layout_Primitives_Test_Support
+import Geometry
+import Layout_Test_Support
 import Testing
 
-@testable import Layout_Primitives
+@testable import Layout
 
 @Suite
 struct `Layout.Grid.Lazy Tests` {
