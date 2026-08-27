@@ -1,4 +1,3 @@
-public import Boundary
 public import Dimension
 
 public struct Corner: Sendable, Hashable, Codable {
@@ -182,18 +181,5 @@ extension Corner {
     @inlinable
     public var verticalAdjacent: Corner {
         Self.verticalAdjacent(self)
-    }
-}
-
-extension Boundary.Corner {
-
-    @inlinable
-    public init(_ corner: Corner, direction: Direction) {
-        switch (Horizontal(corner.horizontal, direction: direction), Vertical(corner.vertical)) {
-        case (.rightward, .upward): self = .topRight
-        case (.leftward, .upward): self = .topLeft
-        case (.rightward, .downward): self = .bottomRight
-        case (.leftward, .downward): self = .bottomLeft
-        }
     }
 }

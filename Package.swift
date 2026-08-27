@@ -17,25 +17,25 @@ let package = Package(
             targets: ["Layout"]
         ),
         .library(
-            name: "Layout Test Support",
-            targets: ["Layout Test Support"]
+            name: "Layout Standard Library Integration",
+            targets: ["Layout Standard Library Integration"]
+        ),
+        .library(
+            name: "Layout Apple Foundation Integration",
+            targets: ["Layout Apple Foundation Integration"]
         ),
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-axis.git",
+            url: "https://github.com/swift-atoms/swift-axis.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-dimension.git",
+            url: "https://github.com/swift-atoms/swift-dimension.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-geometry.git",
-            branch: "main"
-        ),
-        .package(
-            url: "https://github.com/swift-molecules/swift-boundary.git",
+            url: "https://github.com/swift-atoms/swift-geometry.git",
             branch: "main"
         ),
     ],
@@ -46,25 +46,26 @@ let package = Package(
                 .product(name: "Axis", package: "swift-axis"),
                 .product(name: "Dimension", package: "swift-dimension"),
                 .product(name: "Geometry", package: "swift-geometry"),
-                .product(name: "Boundary", package: "swift-boundary"),
             ]
         ),
         .target(
-            name: "Layout Test Support",
+            name: "Layout Standard Library Integration",
+            dependencies: ["Layout"]
+        ),
+        .target(
+            name: "Layout Apple Foundation Integration",
             dependencies: [
                 "Layout",
-                .product(
-                    name: "Dimension Test Support",
-                    package: "swift-dimension"
-                ),
-            ],
-            path: "Tests/Support"
+                "Layout Standard Library Integration",
+            ]
         ),
         .testTarget(
             name: "Layout Tests",
             dependencies: [
                 "Layout",
-                "Layout Test Support",
+                .product(name: "Axis", package: "swift-axis"),
+                .product(name: "Dimension", package: "swift-dimension"),
+                .product(name: "Geometry", package: "swift-geometry"),
             ]
         ),
     ],
