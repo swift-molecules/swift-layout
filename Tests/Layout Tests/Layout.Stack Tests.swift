@@ -1,4 +1,6 @@
 import Axis
+import Layout_Standard_Library_Integration
+import Tagged_Standard_Library_Integration
 import Testing
 
 @testable import Geometry
@@ -88,6 +90,13 @@ struct `Layout.Stack Tests` {
             var set = Set<TestLayout.Stack<[Int]>>()
             set.insert(stack)
             #expect(set.count == 1)
+        }
+
+        @Test
+        func `Stack is Codable through standard library integration`() {
+            let spacing: TestLayout.Spacing = 10.0
+            let stack: TestLayout.Stack<[Int]> = .vertical(spacing: spacing, content: [1, 2])
+            let _: any Codable = stack
         }
     }
 

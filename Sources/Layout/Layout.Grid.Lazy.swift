@@ -50,10 +50,6 @@ extension Layout.Grid.Lazy: Equatable where Scalar: Equatable, Content: Equatabl
 
 extension Layout.Grid.Lazy: Hashable where Scalar: Hashable, Content: Hashable {}
 
-#if !hasFeature(Embedded)
-    extension Layout.Grid.Lazy: Codable where Scalar: Codable, Content: Codable {}
-#endif
-
 extension Layout.Grid.Lazy {
 
     @inlinable

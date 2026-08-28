@@ -42,9 +42,6 @@ extension Layout.Grid {
 extension Layout.Grid.Gaps: Sendable where Scalar: Sendable {}
 extension Layout.Grid.Gaps: Equatable where Scalar: Equatable {}
 extension Layout.Grid.Gaps: Hashable where Scalar: Hashable {}
-#if !hasFeature(Embedded)
-    extension Layout.Grid.Gaps: Codable where Scalar: Codable {}
-#endif
 
 extension Layout.Grid.Gaps where Scalar: AdditiveArithmetic {
 
@@ -59,10 +56,6 @@ extension Layout.Grid: Sendable where Scalar: Sendable, Content: Sendable {}
 extension Layout.Grid: Equatable where Scalar: Equatable, Content: Equatable {}
 
 extension Layout.Grid: Hashable where Scalar: Hashable, Content: Hashable {}
-
-#if !hasFeature(Embedded)
-    extension Layout.Grid: Codable where Scalar: Codable, Content: Codable {}
-#endif
 
 extension Layout.Grid {
 

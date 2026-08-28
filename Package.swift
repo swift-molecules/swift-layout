@@ -31,6 +31,10 @@ let package = Package(
             branch: "main"
         ),
         .package(
+            url: "https://github.com/swift-atoms/swift-tagged.git",
+            branch: "main"
+        ),
+        .package(
             url: "https://github.com/swift-atoms/swift-dimension.git",
             branch: "main"
         ),
@@ -46,11 +50,19 @@ let package = Package(
                 .product(name: "Axis", package: "swift-axis"),
                 .product(name: "Dimension", package: "swift-dimension"),
                 .product(name: "Geometry", package: "swift-geometry"),
+                .product(name: "Tagged", package: "swift-tagged"),
             ]
         ),
         .target(
             name: "Layout Standard Library Integration",
-            dependencies: ["Layout"]
+            dependencies: [
+                "Layout",
+                .product(name: "Axis", package: "swift-axis"),
+                .product(name: "Axis Standard Library Integration", package: "swift-axis"),
+                .product(name: "Dimension", package: "swift-dimension"),
+                .product(name: "Tagged", package: "swift-tagged"),
+                .product(name: "Tagged Standard Library Integration", package: "swift-tagged"),
+            ]
         ),
         .target(
             name: "Layout Apple Foundation Integration",
@@ -63,9 +75,14 @@ let package = Package(
             name: "Layout Tests",
             dependencies: [
                 "Layout",
+                "Layout Standard Library Integration",
                 .product(name: "Axis", package: "swift-axis"),
                 .product(name: "Dimension", package: "swift-dimension"),
                 .product(name: "Geometry", package: "swift-geometry"),
+                .product(
+                    name: "Tagged Standard Library Integration",
+                    package: "swift-tagged"
+                ),
             ]
         ),
     ],

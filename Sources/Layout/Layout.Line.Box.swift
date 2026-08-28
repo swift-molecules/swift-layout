@@ -1,4 +1,5 @@
-public import Dimension
+internal import Dimension
+public import Tagged
 
 extension Layout.Line {
 
@@ -19,13 +20,15 @@ extension Layout.Line.Box: Equatable where Scalar: Equatable {}
 
 extension Layout.Line.Box where Scalar: FloatingPoint {
 
-    @inlinable
     public init(
         ascender: Layout.Height,
         descender: Layout.Height,
         height: Layout.Height
     ) {
-        let leading = Layout.Height.max(.zero, (height - ascender - descender) / 2)
+        let leading = Layout.Height.max(
+            .zero,
+            Layout.Height(_unchecked: (height - ascender - descender).underlying / 2)
+        )
         self.height = height
         self.leading = leading
         self.ascent = leading + ascender

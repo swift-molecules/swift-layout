@@ -34,10 +34,6 @@ extension Layout.Stack: Equatable where Scalar: Equatable, Content: Equatable {}
 
 extension Layout.Stack: Hashable where Scalar: Hashable, Content: Hashable {}
 
-#if !hasFeature(Embedded)
-    extension Layout.Stack: Codable where Scalar: Codable, Content: Codable {}
-#endif
-
 extension Layout.Stack {
 
     @inlinable
