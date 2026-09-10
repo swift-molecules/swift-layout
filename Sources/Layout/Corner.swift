@@ -1,4 +1,4 @@
-public import Dimension
+public import Direction
 
 public struct Corner: Sendable, Hashable, Codable {
 

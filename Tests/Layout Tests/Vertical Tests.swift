@@ -1,6 +1,6 @@
 import Testing
 
-@testable import Dimension
+@testable import Direction
 @testable import Layout
 
 @Suite

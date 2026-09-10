@@ -1,6 +1,6 @@
 import Axis
 import Layout_Standard_Library_Integration
-import Tagged_Standard_Library_Integration
+import Tagged
 import Testing
 
 @testable import Geometry
@@ -100,9 +100,4 @@ struct `Layout.Stack Tests` {
         }
     }
 
-    @Suite
-    struct `Edge Case` {}
-
-    @Suite
-    struct Integration {}
 }

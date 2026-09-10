@@ -1,5 +1,5 @@
 public import Axis
-import Dimension
+import Direction
 
 extension Layout {
 

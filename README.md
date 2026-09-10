@@ -28,3 +28,9 @@ Add the product to your target:
 ## License
 
 Apache 2.0. See [LICENSE.md](LICENSE.md).
+
+Orientation types come from Direction. Layout owns their writing-direction and
+alignment interpretation; the mathematical Direction atom gains no layout policy.
+The unused `Layout.Point` alias to an unavailable Geometry.Point has been removed.
+Layout stores declarative arrangement policy and content, not positioned geometry.
+Signed spacing and current Geometry size aliases remain under consumer migration.

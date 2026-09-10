@@ -13,7 +13,5 @@ extension Layout {
 
     public typealias Spacing = Geometry<Scalar, Space>.Magnitude
 
-    public typealias Point = Geometry<Scalar, Space>.Point<2>
-
     public typealias Size = Geometry<Scalar, Space>.Size<2>
 }

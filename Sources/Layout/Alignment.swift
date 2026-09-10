@@ -1,4 +1,4 @@
-public import Dimension
+public import Direction
 
 public struct Alignment: Sendable, Hashable, Codable {
 

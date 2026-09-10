@@ -1,9 +1,7 @@
 import Axis
-import Axis_Standard_Library_Integration
-import Dimension
+import Direction
 public import Layout
 import Tagged
-import Tagged_Standard_Library_Integration
 
 private enum LayoutStackCodingKey: String, CodingKey {
     case axis

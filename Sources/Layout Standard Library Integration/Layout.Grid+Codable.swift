@@ -1,7 +1,6 @@
-import Dimension
+import Direction
 public import Layout
 import Tagged
-import Tagged_Standard_Library_Integration
 
 private enum LayoutGridGapsCodingKey: String, CodingKey {
     case row

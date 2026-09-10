@@ -35,7 +35,7 @@ let package = Package(
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-atoms/swift-dimension.git",
+            url: "https://github.com/swift-atoms/swift-direction.git",
             branch: "main"
         ),
         .package(
@@ -48,7 +48,7 @@ let package = Package(
             name: "Layout",
             dependencies: [
                 .product(name: "Axis", package: "swift-axis"),
-                .product(name: "Dimension", package: "swift-dimension"),
+                .product(name: "Direction", package: "swift-direction"),
                 .product(name: "Geometry", package: "swift-geometry"),
                 .product(name: "Tagged", package: "swift-tagged"),
             ]
@@ -58,10 +58,8 @@ let package = Package(
             dependencies: [
                 "Layout",
                 .product(name: "Axis", package: "swift-axis"),
-                .product(name: "Axis Standard Library Integration", package: "swift-axis"),
-                .product(name: "Dimension", package: "swift-dimension"),
+                .product(name: "Direction", package: "swift-direction"),
                 .product(name: "Tagged", package: "swift-tagged"),
-                .product(name: "Tagged Standard Library Integration", package: "swift-tagged"),
             ]
         ),
         .target(
@@ -77,10 +75,10 @@ let package = Package(
                 "Layout",
                 "Layout Standard Library Integration",
                 .product(name: "Axis", package: "swift-axis"),
-                .product(name: "Dimension", package: "swift-dimension"),
+                .product(name: "Direction", package: "swift-direction"),
                 .product(name: "Geometry", package: "swift-geometry"),
                 .product(
-                    name: "Tagged Standard Library Integration",
+                    name: "Tagged",
                     package: "swift-tagged"
                 ),
             ]

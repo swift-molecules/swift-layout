@@ -1,4 +1,5 @@
-internal import Dimension
+internal import Direction
+public import Geometry
 public import Tagged
 
 extension Layout.Line {

@@ -1,5 +1,5 @@
-import Dimension
-import Tagged_Standard_Library_Integration
+import Direction
+import Tagged
 import Testing
 
 @testable import Geometry

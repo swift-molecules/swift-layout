@@ -16,7 +16,6 @@ struct `Layout Tests` {
         let _: TestLayout.Width.Type = TestLayout.Width.self
         let _: TestLayout.Height.Type = TestLayout.Height.self
         let _: TestLayout.Spacing.Type = TestLayout.Spacing.self
-        let _: TestLayout.Point.Type = TestLayout.Point.self
         let _: TestLayout.Size.Type = TestLayout.Size.self
     }
 }
