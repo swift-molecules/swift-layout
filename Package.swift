@@ -12,10 +12,7 @@ let package = Package(
         .visionOS(.v27),
     ],
     products: [
-        .library(
-            name: "Layout",
-            targets: ["Layout"]
-        ),
+        .library(name: "Layout", targets: ["Layout"]),
         .library(
             name: "Layout Standard Library Integration",
             targets: ["Layout Standard Library Integration"]
@@ -25,7 +22,11 @@ let package = Package(
             targets: ["Layout Apple Foundation Integration"]
         ),
     ],
+    traits: [
+        .trait(name: "Boundary", description: "Boundary integration"),
+    ],
     dependencies: [
+        .package(url: "https://github.com/swift-atoms/swift-boundary.git", branch: "main"),
         .package(
             url: "https://github.com/swift-atoms/swift-axis.git",
             branch: "main"
@@ -44,9 +45,18 @@ let package = Package(
         ),
     ],
     targets: [
+        .testTarget(
+            name: "Layout Boundary Tests",
+            dependencies: [
+                .target(name: "Layout"),
+                .product(name: "Boundary", package: "swift-boundary", condition: .when(traits: ["Boundary"])),
+            ],
+            path: "Tests/Layout Boundary Tests"
+        ),
         .target(
             name: "Layout",
             dependencies: [
+                .product(name: "Boundary", package: "swift-boundary", condition: .when(traits: ["Boundary"])),
                 .product(name: "Axis", package: "swift-axis"),
                 .product(name: "Direction", package: "swift-direction"),
                 .product(name: "Geometry", package: "swift-geometry"),
