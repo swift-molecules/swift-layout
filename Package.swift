@@ -66,7 +66,7 @@ let package = Package(
         .target(
             name: "Layout Standard Library Integration",
             dependencies: [
-                "Layout",
+                .target(name: "Layout"),
                 .product(name: "Axis", package: "swift-axis"),
                 .product(name: "Direction", package: "swift-direction"),
                 .product(name: "Tagged", package: "swift-tagged"),
@@ -75,15 +75,15 @@ let package = Package(
         .target(
             name: "Layout Apple Foundation Integration",
             dependencies: [
-                "Layout",
-                "Layout Standard Library Integration",
+                .target(name: "Layout"),
+                .target(name: "Layout Standard Library Integration"),
             ]
         ),
         .testTarget(
             name: "Layout Tests",
             dependencies: [
-                "Layout",
-                "Layout Standard Library Integration",
+                .target(name: "Layout"),
+                .target(name: "Layout Standard Library Integration"),
                 .product(name: "Axis", package: "swift-axis"),
                 .product(name: "Direction", package: "swift-direction"),
                 .product(name: "Geometry", package: "swift-geometry"),
@@ -98,17 +98,14 @@ let package = Package(
 )
 
 for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
-    let ecosystem: [SwiftSetting] = [
+    target.swiftSettings = (target.swiftSettings ?? []) + [
         .strictMemorySafety(),
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
         .enableUpcomingFeature("MemberImportVisibility"),
         .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
-        .enableExperimentalFeature("Lifetimes"),
         .enableUpcomingFeature("InferIsolatedConformances"),
+        .enableExperimentalFeature("Lifetimes"),
+        .treatAllWarnings(as: .error),
     ]
-
-    let package: [SwiftSetting] = []
-
-    target.swiftSettings = (target.swiftSettings ?? []) + ecosystem + package
 }

@@ -112,7 +112,7 @@ extension Layout.Grid {
 extension Layout.Grid.Map {
 
     @inlinable
-    public func content<Result, E: Swift.Error>(
+    public func content<Result, E: Swift::Error>(
         _ transform: (Content) throws(E) -> Result
     ) throws(E) -> Layout<Scalar, Space>.Grid<Result> {
         Layout<Scalar, Space>.Grid<Result>(
