@@ -1,6 +1,6 @@
+import Direction
 import Foundation
 import Geometry
-import Direction
 import Layout
 import Layout_Standard_Library_Integration
 import Testing
