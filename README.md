@@ -1,0 +1,14 @@
+# swift-layout
+
+Use this package to describe how content is arranged, as plain values that a renderer later measures and places: a one-axis run (`Layout.Stack`), wrapping lines (`Layout.Flow`), rows and columns (`Layout.Grid`, or `Layout.Grid.Lazy` when the column count follows from the available width), the vertical metrics of a line of text (`Layout.Line.Box`), and logical corners and alignments that depend on writing direction (`Layout::Corner`, `Alignment`, `Layout::Direction`). Measures come from swift-geometry, physical directions from swift-direction; when you need a physical corner rather than a leading/trailing one, convert to `Boundary.Corner` from swift-boundary.
+
+## Laws
+
+- Apart from `Layout.Line.Box`, nothing here computes a position or size. `Layout.Stack`, `Layout.Flow`, `Layout.Grid` and `Layout.Grid.Lazy` only carry policy and content; gaps and column specifications are not validated, so negative gaps are kept and survive coding.
+- `.horizontal` is `Axis<2>.primary` and `.vertical` is `Axis<2>.secondary`.
+- A uniform gap uses one magnitude for both gaps: in `Layout.Grid.Gaps` the row gap is its height and the column gap its width; in `Layout.Flow.Gaps` the item gap is its width and the line gap its height.
+- `map.content` copies the layout when `map` is taken: later mutation of the original does not reach the result. Every field except `content` is carried over unchanged, and an error thrown by the transform propagates as is, with no layout produced.
+- `Layout.Line.Box`: the leading is `max(0, (height − ascender − descender) / 2)` and is added to both the ascender and the descender, so ascent + descent equals `height` whenever the font fits. When it does not fit, the leading is clamped to zero, ascent and descent equal the ascender and descender, and their sum exceeds `height`; `height` is always kept as given.
+- Writing direction: `.leading` resolves to `.leftward` in `.leftToRight` and to `.rightward` in `.rightToLeft`; `.trailing` resolves the other way. `.top` resolves to `.upward`, `.bottom` to `.downward`. With the Boundary trait, `Boundary.Corner` follows the same resolution, so right-to-left swaps left and right and never top and bottom.
+- `opposite` is an involution on `Layout::Direction`, `Layout::Corner` and both alignment sides; `!corner` is `corner.opposite`. `horizontalAdjacent` flips only the horizontal side, `verticalAdjacent` only the vertical side.
+- `Layout.Stack`, `Layout.Flow`, `Layout.Grid` and `Layout.Grid.Lazy` (and their gaps) are `Codable` only when `Layout Standard Library Integration` is imported. They encode as keyed containers whose keys are the stored property names; decoding an encoded `Layout.Flow`, `Layout.Grid` or `Layout.Grid.Lazy` gives back an equal value.
