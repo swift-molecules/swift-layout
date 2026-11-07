@@ -24,19 +24,6 @@ extension Layout {
 }
 
 extension Layout.Grid {
-
-    public struct Gaps {
-
-        public var row: Layout.Height
-
-        public var column: Layout.Width
-
-        @inlinable
-        public init(row: Layout.Height, column: Layout.Width) {
-            self.row = row
-            self.column = column
-        }
-    }
 }
 
 extension Layout.Grid.Gaps: Sendable where Scalar: Sendable {}
@@ -98,15 +85,6 @@ extension Layout.Grid {
     @inlinable
     public var map: Map { Self.map(self) }
 
-    public struct Map {
-        @usableFromInline
-        let grid: Layout<Scalar, Space>.Grid<Content>
-
-        @usableFromInline
-        init(grid: borrowing Layout<Scalar, Space>.Grid<Content>) {
-            self.grid = copy grid
-        }
-    }
 }
 
 extension Layout.Grid.Map {

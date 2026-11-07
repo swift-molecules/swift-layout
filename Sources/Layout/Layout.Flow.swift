@@ -29,19 +29,6 @@ extension Layout {
 }
 
 extension Layout.Flow {
-
-    public struct Gaps {
-
-        public var item: Layout.Width
-
-        public var line: Layout.Height
-
-        @inlinable
-        public init(item: Layout.Width, line: Layout.Height) {
-            self.item = item
-            self.line = line
-        }
-    }
 }
 
 extension Layout.Flow.Gaps: Sendable where Scalar: Sendable {}
@@ -57,16 +44,6 @@ extension Layout.Flow.Gaps where Scalar: AdditiveArithmetic {
 }
 
 extension Layout.Flow {
-
-    public struct Line: Sendable, Hashable, Codable {
-
-        public var alignment: Vertical.Alignment
-
-        @inlinable
-        public init(alignment: Vertical.Alignment) {
-            self.alignment = alignment
-        }
-    }
 }
 
 extension Layout.Flow.Line {
@@ -130,15 +107,6 @@ extension Layout.Flow {
     @inlinable
     public var map: Map { Self.map(self) }
 
-    public struct Map {
-        @usableFromInline
-        let flow: Layout<Scalar, Space>.Flow<Content>
-
-        @usableFromInline
-        init(flow: borrowing Layout<Scalar, Space>.Flow<Content>) {
-            self.flow = copy flow
-        }
-    }
 }
 
 extension Layout.Flow.Map {
