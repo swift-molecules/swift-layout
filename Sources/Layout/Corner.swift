@@ -14,6 +14,13 @@ public struct Corner: Sendable, Hashable, Codable {
 }
 
 extension Horizontal.Alignment {
+
+    public enum Side: Sendable, Hashable, Codable, CaseIterable {
+
+        case leading
+
+        case trailing
+    }
 }
 
 extension Horizontal.Alignment.Side {
@@ -47,6 +54,13 @@ extension Horizontal {
 }
 
 extension Vertical.Alignment {
+
+    public enum Side: Sendable, Hashable, Codable, CaseIterable {
+
+        case top
+
+        case bottom
+    }
 }
 
 extension Vertical.Alignment.Side {
