@@ -76,22 +76,26 @@ struct `Corner Tests` {
     }
 }
 
-@Suite
-struct `Horizontal.Alignment.Side` {
-    @Test(arguments: Horizontal.Alignment.Side.allCases)
-    func opposite(side: Horizontal.Alignment.Side) {
-        let result = Horizontal.Alignment.Side.opposite(side)
-        #expect(result == side.opposite)
-        #expect(result.opposite == side)
+extension `Corner Tests` {
+    @Suite
+    struct `Horizontal.Alignment.Side` {
+        @Test(arguments: Horizontal.Alignment.Side.allCases)
+        func opposite(side: Horizontal.Alignment.Side) {
+            let result = Horizontal.Alignment.Side.opposite(side)
+            #expect(result == side.opposite)
+            #expect(result.opposite == side)
+        }
     }
 }
 
-@Suite
-struct `Vertical.Alignment.Side` {
-    @Test(arguments: Vertical.Alignment.Side.allCases)
-    func opposite(side: Vertical.Alignment.Side) {
-        let result = Vertical.Alignment.Side.opposite(side)
-        #expect(result == side.opposite)
-        #expect(result.opposite == side)
+extension `Corner Tests` {
+    @Suite
+    struct `Vertical.Alignment.Side` {
+        @Test(arguments: Vertical.Alignment.Side.allCases)
+        func opposite(side: Vertical.Alignment.Side) {
+            let result = Vertical.Alignment.Side.opposite(side)
+            #expect(result == side.opposite)
+            #expect(result.opposite == side)
+        }
     }
 }
