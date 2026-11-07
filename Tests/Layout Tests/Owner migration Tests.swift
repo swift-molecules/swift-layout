@@ -6,7 +6,7 @@ import Layout_Standard_Library_Integration
 import Testing
 
 private enum Canvas {}
-private enum ContentFailure: Error { case stop }
+private enum ContentFailure: Swift.Error { case stop }
 
 @Suite struct `Layout owner integration` {
     @Test func `writing direction resolves logical horizontal sides`() {
