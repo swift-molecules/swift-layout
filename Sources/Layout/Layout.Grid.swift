@@ -23,13 +23,6 @@ extension Layout {
     }
 }
 
-extension Layout.Grid {
-}
-
-extension Layout.Grid.Gaps: Sendable where Scalar: Sendable {}
-extension Layout.Grid.Gaps: Equatable where Scalar: Equatable {}
-extension Layout.Grid.Gaps: Hashable where Scalar: Hashable {}
-
 extension Layout.Grid.Gaps where Scalar: AdditiveArithmetic {
 
     @inlinable

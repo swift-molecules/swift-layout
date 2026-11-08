@@ -1,4 +1,4 @@
-public import Geometry
+import Geometry
 
 extension Layout.Grid.Lazy {
     public enum Columns {
@@ -12,3 +12,10 @@ extension Layout.Grid.Lazy {
         case autoFit(minWidth: Scalar)
     }
 }
+
+extension Layout.Grid.Lazy.Columns: Sendable where Scalar: Sendable {}
+extension Layout.Grid.Lazy.Columns: Equatable where Scalar: Equatable {}
+extension Layout.Grid.Lazy.Columns: Hashable where Scalar: Hashable {}
+#if !hasFeature(Embedded)
+    extension Layout.Grid.Lazy.Columns: Codable where Scalar: Codable {}
+#endif

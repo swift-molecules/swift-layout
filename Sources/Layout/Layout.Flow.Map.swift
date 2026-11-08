@@ -1,5 +1,5 @@
-public import Direction
-public import Geometry
+import Direction
+import Geometry
 
 extension Layout.Flow {
     public struct Map {

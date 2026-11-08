@@ -23,16 +23,6 @@ extension Layout.Grid {
     }
 }
 
-extension Layout.Grid.Lazy {
-}
-
-extension Layout.Grid.Lazy.Columns: Sendable where Scalar: Sendable {}
-extension Layout.Grid.Lazy.Columns: Equatable where Scalar: Equatable {}
-extension Layout.Grid.Lazy.Columns: Hashable where Scalar: Hashable {}
-#if !hasFeature(Embedded)
-    extension Layout.Grid.Lazy.Columns: Codable where Scalar: Codable {}
-#endif
-
 extension Layout.Grid.Lazy: Sendable where Scalar: Sendable, Content: Sendable {}
 
 extension Layout.Grid.Lazy: Equatable where Scalar: Equatable, Content: Equatable {}

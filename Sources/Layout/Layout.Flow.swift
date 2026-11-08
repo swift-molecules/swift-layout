@@ -28,13 +28,6 @@ extension Layout {
     }
 }
 
-extension Layout.Flow {
-}
-
-extension Layout.Flow.Gaps: Sendable where Scalar: Sendable {}
-extension Layout.Flow.Gaps: Equatable where Scalar: Equatable {}
-extension Layout.Flow.Gaps: Hashable where Scalar: Hashable {}
-
 extension Layout.Flow.Gaps where Scalar: AdditiveArithmetic {
 
     @inlinable

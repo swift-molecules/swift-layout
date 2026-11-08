@@ -1,4 +1,4 @@
-public import Geometry
+import Geometry
 
 extension Layout.Grid.Lazy {
     public struct Map {

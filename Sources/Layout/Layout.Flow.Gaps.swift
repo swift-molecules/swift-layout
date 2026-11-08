@@ -1,4 +1,4 @@
-public import Direction
+import Direction
 public import Geometry
 
 extension Layout.Flow {
@@ -15,3 +15,7 @@ extension Layout.Flow {
         }
     }
 }
+
+extension Layout.Flow.Gaps: Sendable where Scalar: Sendable {}
+extension Layout.Flow.Gaps: Equatable where Scalar: Equatable {}
+extension Layout.Flow.Gaps: Hashable where Scalar: Hashable {}

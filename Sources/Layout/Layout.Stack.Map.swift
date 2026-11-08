@@ -1,4 +1,4 @@
-public import Axis
+import Axis
 import Direction
 
 extension Layout.Stack {

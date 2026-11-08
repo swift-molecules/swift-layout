@@ -1,5 +1,5 @@
 public import Direction
-public import Geometry
+import Geometry
 
 extension Layout.Flow {
     public struct Line: Sendable, Hashable, Codable {

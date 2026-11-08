@@ -1,4 +1,4 @@
-public import Geometry
+import Geometry
 
 extension Layout.Grid {
     public struct Map {
