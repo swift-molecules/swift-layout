@@ -24,6 +24,17 @@ extension Layout.Grid {
 }
 
 extension Layout.Grid.Lazy {
+
+    public enum Columns {
+
+        case count(Int)
+
+        case fractions([Scalar])
+
+        case autoFill(minWidth: Scalar)
+
+        case autoFit(minWidth: Scalar)
+    }
 }
 
 extension Layout.Grid.Lazy.Columns: Sendable where Scalar: Sendable {}
@@ -86,6 +97,15 @@ extension Layout.Grid.Lazy {
     @inlinable
     public var map: Map { Self.map(self) }
 
+    public struct Map {
+        @usableFromInline
+        let grid: Layout<Scalar, Space>.Grid<Content>.Lazy
+
+        @usableFromInline
+        init(grid: borrowing Layout<Scalar, Space>.Grid<Content>.Lazy) {
+            self.grid = copy grid
+        }
+    }
 }
 
 extension Layout.Grid.Lazy.Map {
