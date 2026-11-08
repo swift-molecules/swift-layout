@@ -1,7 +1,6 @@
 public import Axis
 import Direction
 
-
 extension Layout.Stack {
     public struct Map {
         @usableFromInline

@@ -1,4 +1,3 @@
-
 extension Cross {
     public enum Alignment: Sendable, Hashable, Codable, CaseIterable {
 

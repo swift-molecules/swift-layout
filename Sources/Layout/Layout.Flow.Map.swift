@@ -1,7 +1,6 @@
 public import Direction
 public import Geometry
 
-
 extension Layout.Flow {
     public struct Map {
         @usableFromInline

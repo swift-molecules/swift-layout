@@ -1,6 +1,5 @@
 public import Geometry
 
-
 extension Layout.Grid.Lazy {
     public struct Map {
         @usableFromInline

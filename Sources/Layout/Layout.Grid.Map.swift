@@ -1,6 +1,5 @@
 public import Geometry
 
-
 extension Layout.Grid {
     public struct Map {
         @usableFromInline
