@@ -1,6 +1,6 @@
 public import Direction
 
-public struct Corner: Sendable, Hashable, Codable {
+public struct Corner: Sendable, Hashable {
 
     public var horizontal: Horizontal.Alignment.Side
 
@@ -169,3 +169,7 @@ extension Corner {
         Self.verticalAdjacent(self)
     }
 }
+
+#if !hasFeature(Embedded)
+    extension Corner: Codable {}
+#endif

@@ -1,5 +1,5 @@
 extension Cross {
-    public enum Alignment: Sendable, Hashable, Codable, CaseIterable {
+    public enum Alignment: Sendable, Hashable, CaseIterable {
 
         case leading
 
@@ -10,3 +10,7 @@ extension Cross {
         case fill
     }
 }
+
+#if !hasFeature(Embedded)
+    extension Cross.Alignment: Codable {}
+#endif

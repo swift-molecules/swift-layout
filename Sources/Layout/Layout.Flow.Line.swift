@@ -2,7 +2,7 @@ public import Direction
 import Geometry
 
 extension Layout.Flow {
-    public struct Line: Sendable, Hashable, Codable {
+    public struct Line: Sendable, Hashable {
 
         public var alignment: Vertical.Alignment
 
@@ -12,3 +12,7 @@ extension Layout.Flow {
         }
     }
 }
+
+#if !hasFeature(Embedded)
+    extension Layout.Flow.Line: Codable {}
+#endif

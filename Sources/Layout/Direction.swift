@@ -1,4 +1,4 @@
-public enum Direction: Sendable, Hashable, Codable, CaseIterable {
+public enum Direction: Sendable, Hashable, CaseIterable {
 
     case leftToRight
 
@@ -27,3 +27,7 @@ extension Direction {
         Self.opposite(self)
     }
 }
+
+#if !hasFeature(Embedded)
+    extension Direction: Codable {}
+#endif

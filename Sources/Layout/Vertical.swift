@@ -2,7 +2,7 @@ public import Direction
 
 extension Vertical {
 
-    public enum Baseline: Sendable, Hashable, Codable, CaseIterable {
+    public enum Baseline: Sendable, Hashable, CaseIterable {
 
         case first
 
@@ -12,7 +12,7 @@ extension Vertical {
 
 extension Vertical {
 
-    public enum Alignment: Sendable, Hashable, Codable {
+    public enum Alignment: Sendable, Hashable {
 
         case top
 
@@ -39,3 +39,8 @@ extension Vertical.Alignment: CaseIterable {
         [.top, .center, .bottom, .baseline(.first), .baseline(.last)]
     }
 }
+
+#if !hasFeature(Embedded)
+    extension Vertical.Baseline: Codable {}
+    extension Vertical.Alignment: Codable {}
+#endif

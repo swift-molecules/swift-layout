@@ -2,7 +2,7 @@ public import Direction
 
 extension Horizontal {
 
-    public enum Alignment: Sendable, Hashable, Codable, CaseIterable {
+    public enum Alignment: Sendable, Hashable, CaseIterable {
 
         case leading
 
@@ -11,3 +11,7 @@ extension Horizontal {
         case trailing
     }
 }
+
+#if !hasFeature(Embedded)
+    extension Horizontal.Alignment: Codable {}
+#endif

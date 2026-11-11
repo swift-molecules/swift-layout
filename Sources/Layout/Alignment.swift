@@ -1,6 +1,6 @@
 public import Direction
 
-public struct Alignment: Sendable, Hashable, Codable {
+public struct Alignment: Sendable, Hashable {
 
     public var horizontal: Horizontal.Alignment
 
@@ -33,3 +33,7 @@ extension Alignment {
 
     public static let bottomTrailing = Self(horizontal: .trailing, vertical: .bottom)
 }
+
+#if !hasFeature(Embedded)
+    extension Alignment: Codable {}
+#endif
