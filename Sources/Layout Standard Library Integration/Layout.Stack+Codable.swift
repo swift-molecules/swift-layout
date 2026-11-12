@@ -3,12 +3,14 @@ import Direction
 public import Layout
 import Tagged
 
-private enum LayoutStackCodingKey: String, CodingKey {
-    case axis
-    case spacing
-    case alignment
-    case content
-}
+#if !hasFeature(Embedded)
+    private enum LayoutStackCodingKey: String, CodingKey {
+        case axis
+        case spacing
+        case alignment
+        case content
+    }
+#endif
 
 #if !hasFeature(Embedded)
     extension Layout.Stack: Codable where Scalar: Codable, Content: Codable {

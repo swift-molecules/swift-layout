@@ -2,10 +2,12 @@ import Direction
 public import Layout
 import Tagged
 
-private enum LayoutGridGapsCodingKey: String, CodingKey {
-    case row
-    case column
-}
+#if !hasFeature(Embedded)
+    private enum LayoutGridGapsCodingKey: String, CodingKey {
+        case row
+        case column
+    }
+#endif
 
 #if !hasFeature(Embedded)
     extension Layout.Grid.Gaps: Codable where Scalar: Codable {
@@ -26,11 +28,13 @@ private enum LayoutGridGapsCodingKey: String, CodingKey {
     }
 #endif
 
-private enum LayoutGridCodingKey: String, CodingKey {
-    case spacing
-    case alignment
-    case content
-}
+#if !hasFeature(Embedded)
+    private enum LayoutGridCodingKey: String, CodingKey {
+        case spacing
+        case alignment
+        case content
+    }
+#endif
 
 #if !hasFeature(Embedded)
     extension Layout.Grid: Codable where Scalar: Codable, Content: Codable {
@@ -56,11 +60,13 @@ private enum LayoutGridCodingKey: String, CodingKey {
     }
 #endif
 
-private enum LayoutGridLazyCodingKey: String, CodingKey {
-    case columns
-    case spacing
-    case content
-}
+#if !hasFeature(Embedded)
+    private enum LayoutGridLazyCodingKey: String, CodingKey {
+        case columns
+        case spacing
+        case content
+    }
+#endif
 
 #if !hasFeature(Embedded)
     extension Layout.Grid.Lazy: Codable where Scalar: Codable, Content: Codable {

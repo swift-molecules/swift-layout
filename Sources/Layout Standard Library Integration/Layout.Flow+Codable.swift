@@ -2,10 +2,12 @@ import Direction
 public import Layout
 import Tagged
 
-private enum LayoutFlowGapsCodingKey: String, CodingKey {
-    case item
-    case line
-}
+#if !hasFeature(Embedded)
+    private enum LayoutFlowGapsCodingKey: String, CodingKey {
+        case item
+        case line
+    }
+#endif
 
 #if !hasFeature(Embedded)
     extension Layout.Flow.Gaps: Codable where Scalar: Codable {
@@ -26,12 +28,14 @@ private enum LayoutFlowGapsCodingKey: String, CodingKey {
     }
 #endif
 
-private enum LayoutFlowCodingKey: String, CodingKey {
-    case spacing
-    case alignment
-    case line
-    case content
-}
+#if !hasFeature(Embedded)
+    private enum LayoutFlowCodingKey: String, CodingKey {
+        case spacing
+        case alignment
+        case line
+        case content
+    }
+#endif
 
 #if !hasFeature(Embedded)
     extension Layout.Flow: Codable where Scalar: Codable, Content: Codable {
