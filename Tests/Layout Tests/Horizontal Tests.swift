@@ -24,4 +24,15 @@ struct `Horizontal.Alignment Tests` {
         let set: Set<Horizontal.Alignment> = [.leading, .center, .trailing, .leading]
         #expect(set.count == 3)
     }
+
+    @Test
+    func `An alignment indents a run by what it leaves of the measure, from the left`() {
+        #expect(Horizontal.Alignment.leading.indent(of: 30.0, in: 100, direction: .leftToRight) == 0)
+        #expect(Horizontal.Alignment.center.indent(of: 30.0, in: 100, direction: .leftToRight) == 35)
+        #expect(Horizontal.Alignment.trailing.indent(of: 30.0, in: 100, direction: .leftToRight) == 70)
+        #expect(Horizontal.Alignment.leading.indent(of: 30.0, in: 100, direction: .rightToLeft) == 70)
+        #expect(Horizontal.Alignment.center.indent(of: 30.0, in: 100, direction: .rightToLeft) == 35)
+        #expect(Horizontal.Alignment.trailing.indent(of: 30.0, in: 100, direction: .rightToLeft) == 0)
+        #expect(Horizontal.Alignment.trailing.indent(of: 130.0, in: 100, direction: .leftToRight) == -30)
+    }
 }
